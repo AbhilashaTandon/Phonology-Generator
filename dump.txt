@@ -1,0 +1,770 @@
+         63773119 function calls (62897781 primitive calls) in 80.512 seconds
+
+   Ordered by: internal time
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+  1933238    7.426    0.000   28.122    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:992(__getitem__)
+       42    5.674    0.135    5.674    0.135 {method 'run_backward' of 'torch._C._EngineBase' objects}
+  1933238    4.617    0.000   12.975    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:1099(_get_value)
+    16866    4.383    0.000    4.383    0.000 {built-in method torch._C._nn.linear}
+16211724/16211680    4.018    0.000    5.348    0.000 {built-in method builtins.isinstance}
+210972/210970    3.453    0.000   32.408    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:368(__init__)
+  1933238    3.249    0.000    4.833    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexing.py:2609(check_dict_or_set_indexers)
+  1933238    2.774    0.000    4.928    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:3625(get_loc)
+   211023    2.206    0.000   11.453    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\construction.py:494(sanitize_array)
+   211023    1.999    0.000    4.381    0.000 {pandas._libs.lib.maybe_convert_objects}
+  1933238    1.769    0.000    1.769    0.000 {method 'get_loc' of 'pandas._libs.index.IndexEngine' objects}
+   210971    1.531    0.000    2.140    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:5931(__finalize__)
+  1933243    1.498    0.000    1.616    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:2011(internal_values)
+        1    1.491    1.491   68.470   68.470 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:15(load_data)
+  1933243    1.463    0.000    3.079    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:718(_values)
+   210970    1.383    0.000    3.965    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:2385(new_block)
+   104702    1.243    0.000   14.787    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:36(set_poa)
+3487168/2643220    1.220    0.000    1.739    0.000 {built-in method builtins.len}
+   211020    1.179    0.000    5.630    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:1171(maybe_infer_to_datetimelike)
+   210970    1.156    0.000   35.951    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\frame.py:1354(iterrows)
+  1933238    1.105    0.000    1.508    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\common.py:367(apply_if_callable)
+   210974    1.093    0.000    1.332    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:265(__init__)
+   210972    0.920    0.000    3.893    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:5991(__setattr__)
+   210971    0.761    0.000    1.866    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\_config\config.py:116(_get_single_key)
+   210975    0.741    0.000    1.196    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:621(name)
+  3866481    0.707    0.000    0.707    0.000 {pandas._libs.lib.is_integer}
+   210970    0.701    0.000    5.181    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1873(from_array)
+   211023    0.674    0.000    2.382    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\numeric.py:290(full)
+   844308    0.584    0.000    1.329    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\generic.py:42(_instancecheck)
+   210972    0.572    0.000    0.727    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:2334(get_block_type)
+   844308    0.571    0.000    0.745    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\generic.py:37(_check)
+   210971    0.559    0.000    1.981    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:723(_set_axis)
+   210970    0.555    0.000    0.957    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:2305(maybe_coerce_values)
+   210971    0.544    0.000    0.695    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\_config\config.py:596(_get_root)
+211073/211072    0.533    0.000    0.539    0.000 {built-in method numpy.core._multiarray_umath.implement_array_function}
+   421942    0.530    0.000    0.530    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\_config\config.py:610(_get_deprecated_option)
+   210974    0.527    0.000    1.776    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:671(name)
+   843892    0.519    0.000    0.661    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:875(__len__)
+   211024    0.501    0.000    1.105    0.000 <__array_function__ internals>:177(copyto)
+   104702    0.489    0.000    7.638    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:11(set_moa)
+        1    0.482    0.482    0.495    0.495 {method 'read' of 'pandas._libs.parsers.TextReader' objects}
+   210971    0.471    0.000    3.032    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\_config\config.py:134(_get_option)
+   210970    0.470    0.000    0.834    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:2401(check_ndim)
+   210972    0.455    0.000    0.455    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:5975(__getattr__)
+  1933248    0.441    0.000    0.441    0.000 {pandas._libs.lib.is_scalar}
+  1933240    0.403    0.000    0.403    0.000 {built-in method builtins.callable}
+  1933238    0.385    0.000    0.385    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:6354(_maybe_cast_indexer)
+   210974    0.372    0.000    1.250    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1631(validate_all_hashable)
+   421948    0.368    0.000    0.600    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1650(<genexpr>)
+   211023    0.360    0.000    0.662    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\construction.py:644(_sanitize_ndim)
+   210971    0.347    0.000    0.941    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\base.py:58(_validate_set_axis)
+   211037    0.339    0.000    0.339    0.000 {built-in method numpy.asarray}
+   104702    0.328    0.000   24.214    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:5(__init__)
+   211036    0.326    0.000    0.326    0.000 {built-in method numpy.empty}
+   421951    0.311    0.000    0.459    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\inference.py:328(is_hashable)
+   421948    0.293    0.000    0.362    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:7072(ensure_index)
+   210971    0.284    0.000    3.316    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\_config\config.py:260(__call__)
+211071/211070    0.279    0.000    0.880    0.000 {built-in method builtins.all}
+   211024    0.262    0.000    1.833    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\construction.py:396(extract_array)
+   210971    0.251    0.000    0.251    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\flags.py:85(allows_duplicate_labels)
+  1055665    0.251    0.000    0.251    0.000 {built-in method builtins.getattr}
+   210971    0.249    0.000    1.190    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:223(set_axis)
+   210974    0.246    0.000    0.274    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\construction.py:458(ensure_wrapped_if_datetimelike)
+   210974    0.239    0.000    0.239    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\flags.py:49(__init__)
+   211023    0.222    0.000    0.273    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\construction.py:683(_sanitize_str_dtypes)
+   211019    0.200    0.000    0.580    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\common.py:571(require_length_match)
+   210976    0.190    0.000    0.417    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:7167(maybe_extract_name)
+   210971    0.189    0.000    0.564    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\_config\config.py:649(_warn_if_deprecated)
+       42    0.186    0.004    0.684    0.016 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\adam.py:300(_single_tensor_adam)
+   211023    0.181    0.000    0.226    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\construction.py:703(_maybe_repeat)
+   210975    0.175    0.000    0.175    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\_config\__init__.py:33(using_copy_on_write)
+   102079    0.174    0.000    0.213    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:85(add_phoneme)
+   211019    0.164    0.000    0.221    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1322(is_1d_only_ea_dtype)
+   210971    0.162    0.000    0.162    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1847(__init__)
+   210971    0.155    0.000    0.311    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\_config\config.py:637(_translate_key)
+   210971    0.152    0.000    0.152    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\_config\config.py:578(_select_options)
+   210975    0.151    0.000    0.151    0.000 {method 'split' of 'str' objects}
+   421953    0.147    0.000    0.147    0.000 {built-in method builtins.hash}
+    14055    0.143    0.000    0.143    0.000 {built-in method torch.relu}
+        1    0.142    0.142    2.419    2.419 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:139(post_training)
+   422000    0.139    0.000    0.139    0.000 {pandas._libs.lib.is_list_like}
+     1008    0.126    0.000    0.126    0.000 {method 'sqrt' of 'torch._C._TensorBase' objects}
+33869/2811    0.120    0.000    5.083    0.002 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:1494(_call_impl)
+   210970    0.118    0.000    0.118    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1944(_block)
+   421942    0.115    0.000    0.115    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:359(flags)
+     5404    0.115    0.000    0.152    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:89(get_vector)
+   210971    0.115    0.000    0.115    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:338(attrs)
+   210970    0.107    0.000    0.107    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\range.py:395(__iter__)
+     1008    0.102    0.000    0.102    0.000 {method 'add' of 'torch._C._TensorBase' objects}
+     2811    0.100    0.000    4.994    0.002 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\container.py:215(forward)
+   422588    0.094    0.000    0.094    0.000 {built-in method builtins.issubclass}
+    16866    0.088    0.000    4.501    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\linear.py:113(forward)
+   211024    0.071    0.000    0.071    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\multiarray.py:1079(copyto)
+   210971    0.071    0.000    0.071    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\flags.py:53(allows_duplicate_labels)
+     2016    0.068    0.000    0.068    0.000 {method 'mul_' of 'torch._C._TensorBase' objects}
+       42    0.065    0.002    0.065    0.002 {built-in method torch._C._nn.binary_cross_entropy}
+     1008    0.063    0.000    0.063    0.000 {method 'addcdiv_' of 'torch._C._TensorBase' objects}
+    33869    0.061    0.000    0.061    0.000 {built-in method torch._C._get_tracing_state}
+        4    0.060    0.015    0.060    0.015 {method 'astype' of 'numpy.ndarray' objects}
+     2016    0.060    0.000    0.060    0.000 {method 'add_' of 'torch._C._TensorBase' objects}
+     1008    0.060    0.000    0.060    0.000 {method 'addcmul_' of 'torch._C._TensorBase' objects}
+   210972    0.047    0.000    0.047    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:1323(_clear_item_cache)
+        1    0.046    0.046   80.512   80.512 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:163(main)
+   110505    0.041    0.000    0.041    0.000 {method 'append' of 'list' objects}
+   211033    0.039    0.000    0.039    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:2256(cast)
+       53    0.038    0.001    0.038    0.001 {built-in method torch.sigmoid}
+    36681    0.037    0.000    0.037    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:1601(__getattr__)
+       58    0.035    0.001    0.037    0.001 {built-in method builtins.print}
+       11    0.031    0.003    0.031    0.003 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:107(from_vector)
+     5449    0.025    0.000    0.025    0.000 {built-in method numpy.array}
+     2727    0.024    0.000    0.024    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+        1    0.024    0.024    0.024    0.024 {pandas._libs.algos.take_2d_axis0_object_object}
+        2    0.024    0.012    0.118    0.059 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1741(_interleave)
+        2    0.023    0.011    0.141    0.071 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1677(as_array)
+       42    0.022    0.001    0.029    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:435(zero_grad)
+    14055    0.020    0.000    0.186    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\activation.py:102(forward)
+    14055    0.018    0.000    0.166    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\functional.py:1446(relu)
+     2769    0.018    0.000    0.018    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+        1    0.017    0.017    9.554    9.554 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:70(train)
+     5406    0.016    0.000    0.016    0.000 {built-in method numpy.zeros}
+       24    0.016    0.001    0.016    0.001 {method 'uniform_' of 'torch._C._TensorBase' objects}
+     2716    0.012    0.000    2.079    0.001 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\autoencoder.py:45(encode)
+        2    0.012    0.006    0.027    0.014 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:2249(_stack_arrays)
+        1    0.011    0.011    0.550    0.550 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:540(_read)
+      151    0.011    0.000    0.011    0.000 {built-in method _codecs.utf_8_decode}
+       42    0.009    0.000    0.018    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\adam.py:66(_init_group)
+       84    0.006    0.000    0.006    0.000 {built-in method torch._ops.profiler._record_function_enter_new}
+       48    0.006    0.000    0.006    0.000 {built-in method torch.zeros_like}
+    14097    0.005    0.000    0.005    0.000 {built-in method torch._C._has_torch_function_unary}
+       42    0.005    0.000    0.077    0.002 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:78(<listcomp>)
+     1008    0.005    0.000    0.010    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:39(_get_value)
+     2811    0.005    0.000    0.008    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\container.py:207(__iter__)
+       49    0.005    0.000    0.005    0.000 {method 'reduce' of 'numpy.ufunc' objects}
+     1050    0.004    0.000    0.004    0.000 {method 'item' of 'torch._C._TensorBase' objects}
+     1008    0.003    0.000    0.005    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:52(_dispatch_sqrt)
+       42    0.003    0.000    0.719    0.017 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:265(wrapper)
+       84    0.003    0.000    0.003    0.000 {built-in method torch._ops.profiler.}
+        1    0.002    0.002    0.003    0.003 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:60(__init__)
+     2727    0.002    0.000    0.002    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:80(__init__)
+        1    0.002    0.002    0.002    0.002 {built-in method _imp.create_dynamic}
+       10    0.002    0.000    0.045    0.005 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:115(gen_inventory)
+       74    0.002    0.000    0.003    0.000 {built-in method builtins.sorted}
+       84    0.002    0.000    0.005    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\autograd\profiler.py:495(__exit__)
+     1008    0.002    0.000    0.002    0.000 {built-in method torch.is_complex}
+       42    0.002    0.000    0.002    0.000 {method 'reshape' of 'torch._C._TensorBase' objects}
+     2812    0.002    0.000    0.002    0.000 {built-in method builtins.iter}
+     1008    0.001    0.000    0.001    0.000 {method 'conj' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.708    0.017 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:29(_use_grad)
+     3029    0.001    0.000    0.001    0.000 {method 'values' of 'collections.OrderedDict' objects}
+       84    0.001    0.000    0.002    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\autograd\profiler.py:482(__init__)
+       42    0.001    0.000    0.706    0.017 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\adam.py:108(step)
+        1    0.001    0.001    0.001    0.001 {method 'close' of 'pandas._libs.parsers.TextReader' objects}
+       42    0.001    0.000    0.001    0.000 {built-in method torch.ones_like}
+       42    0.001    0.000    2.939    0.070 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\autoencoder.py:39(forward)
+       84    0.001    0.000    0.007    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\autograd\profiler.py:491(__enter__)
+       42    0.001    0.000    0.068    0.002 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\loss.py:618(forward)
+       11    0.001    0.000    0.002    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:113(__str__)
+     1050    0.001    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\adam.py:268(<genexpr>)
+       42    0.001    0.000    0.687    0.016 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\adam.py:231(adam)
+     1176    0.001    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\_tensor.py:942(__hash__)
+       13    0.001    0.000    0.001    0.000 {built-in method nt.stat}
+       42    0.001    0.000    5.677    0.135 C:\Users\abhil\anaconda3\Lib\site-packages\torch\autograd\__init__.py:106(backward)
+     1068    0.001    0.000    0.001    0.000 {built-in method math.sqrt}
+    85/84    0.001    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:352(inner)
+      156    0.001    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\autograd\grad_mode.py:149(__init__)
+       42    0.001    0.000    5.678    0.135 C:\Users\abhil\anaconda3\Lib\site-packages\torch\_tensor.py:428(backward)
+       24    0.001    0.000    0.001    0.000 {built-in method torch.empty}
+       24    0.001    0.000    0.001    0.000 {built-in method torch.tensor}
+     3142    0.001    0.000    0.001    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:38(<lambda>)
+       42    0.001    0.000    0.066    0.002 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\functional.py:3032(binary_cross_entropy)
+     2178    0.001    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\_jit_internal.py:1102(is_scripting)
+        1    0.001    0.001    0.001    0.001 {built-in method io.open_code}
+       42    0.001    0.000    0.002    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\autograd\__init__.py:50(_make_grads)
+        1    0.001    0.001    0.001    0.001 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:41(<listcomp>)
+       11    0.001    0.000    0.001    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:95(get_inventory)
+       42    0.001    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:64(_default_to_fused_or_foreach)
+       27    0.001    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:437(__init__)
+        1    0.001    0.001    0.001    0.001 {pandas._libs.algos.take_2d_axis1_int64_int64}
+      205    0.001    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1335(is_extension_array_dtype)
+       42    0.000    0.000    0.005    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\fromnumeric.py:2188(sum)
+       42    0.000    0.000    0.005    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\fromnumeric.py:69(_wrapreduction)
+        1    0.000    0.000    0.000    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:165(<dictcomp>)
+       84    0.000    0.000    0.006    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\_ops.py:497(__call__)
+      103    0.000    0.000    0.000    0.000 {method 'format' of 'str' objects}
+     1176    0.000    0.000    0.000    0.000 {built-in method builtins.id}
+      195    0.000    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:653(is_integer_dtype)
+      151    0.000    0.000    0.011    0.000 <frozen codecs>:319(decode)
+       84    0.000    0.000    0.003    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\_ops.py:286(__call__)
+       53    0.000    0.000    0.038    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\activation.py:294(forward)
+       61    0.000    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:1617(__setattr__)
+      132    0.000    0.000    0.000    0.000 {method 'size' of 'torch._C._TensorBase' objects}
+       10    0.000    0.000    0.000    0.000 {method 'normal' of 'numpy.random.mtrand.RandomState' objects}
+       12    0.000    0.000    0.020    0.002 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\linear.py:90(__init__)
+       24    0.000    0.000    0.000    0.000 {built-in method _make_subclass}
+       36    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\autograd\grad_mode.py:48(__init__)
+      399    0.000    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1494(_is_dtype_type)
+       84    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:72(<genexpr>)
+     1008    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\_utils.py:786(is_compiling)
+       12    0.000    0.000    0.017    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\linear.py:103(reset_parameters)
+       42    0.000    0.000    0.006    0.000 <__array_function__ internals>:177(sum)
+      131    0.000    0.000    0.001    0.000 {built-in method builtins.hasattr}
+   200/54    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:2224(named_modules)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:489(add_param_group)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:96(_path_join)
+      234    0.000    0.000    0.000    0.000 {built-in method torch.is_grad_enabled}
+       12    0.000    0.000    0.016    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\init.py:366(kaiming_uniform_)
+      145    0.000    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1209(is_float_dtype)
+        1    0.000    0.000    0.000    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:48(<dictcomp>)
+      244    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1435(_is_dtype)
+        1    0.000    0.000    0.000    0.000 {method 'shuffle' of 'numpy.random.mtrand.RandomState' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method marshal.loads}
+        1    0.000    0.000    0.001    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_methods.py:198(_var)
+    75/10    0.000    0.000    0.000    0.000 {built-in method _abc._abc_subclasscheck}
+       10    0.000    0.000    0.000    0.000 {method 'rand' of 'numpy.random.mtrand.RandomState' objects}
+       50    0.000    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:2045(_named_members)
+      106    0.000    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1244(is_bool_dtype)
+      519    0.000    0.000    0.000    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:104(<lambda>)
+       28    0.000    0.000    0.000    0.000 {built-in method torch._C._log_api_usage_once}
+       24    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:539(register_parameter)
+       42    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\fromnumeric.py:70(<dictcomp>)
+      519    0.000    0.000    0.000    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\language.py:75(__str__)
+        4    0.000    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:469(__new__)
+       42    0.000    0.000    0.000    0.000 {built-in method builtins.min}
+       36    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\autograd\grad_mode.py:53(__enter__)
+       36    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\autograd\grad_mode.py:57(__exit__)
+      197    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:152(<lambda>)
+       42    0.000    0.000    0.000    0.000 {built-in method torch._C._are_functorch_transforms_active}
+       24    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\init.py:284(_calculate_fan_in_and_fan_out)
+       66    0.000    0.000    0.000    0.000 {method 'numel' of 'torch._C._TensorBase' objects}
+       37    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\parameter.py:8(__instancecheck__)
+      366    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1459(get_dtype)
+        1    0.000    0.000    0.021    0.021 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\autoencoder.py:7(__init__)
+        6    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:1604(find_spec)
+       23    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:585(add_module)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\container.py:97(__init__)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:119(<listcomp>)
+      285    0.000    0.000    0.000    0.000 {method 'get' of 'dict' objects}
+       11    0.000    0.000    0.014    0.001 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\autoencoder.py:49(decode)
+      156    0.000    0.000    0.000    0.000 {built-in method torch._C._set_grad_enabled}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_methods.py:164(_mean)
+        1    0.000    0.000    0.004    0.004 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:129(gen_avg_inventory)
+       42    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\autograd\__init__.py:98(_tensor_or_tensors_to_tuple)
+       42    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\_reduction.py:7(get_enum)
+        1    0.000    0.000    0.000    0.000 {built-in method io.open}
+        1    0.000    0.000    0.003    0.003 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\construction.py:574(_homogenize)
+       66    0.000    0.000    0.000    0.000 {built-in method torch._C._has_torch_function_variadic}
+       12    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\init.py:67(calculate_gain)
+      197    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:147(classes_and_not_datetimelike)
+      151    0.000    0.000    0.000    0.000 <frozen codecs>:331(getstate)
+       12    0.000    0.000    0.000    0.000 {method 'reshape' of 'numpy.ndarray' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\util\version\__init__.py:334(__init__)
+        1    0.000    0.000    0.000    0.000 {method 'close' of '_io.TextIOWrapper' objects}
+       42    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:228(_cuda_graph_capture_health_check)
+        1    0.000    0.000    0.000    0.000 {built-in method nt.listdir}
+       25    0.000    0.000    0.001    0.000 c:\Users\abhil\Documents\Programming\Machine Learning\Phonology Generator\main.py:171(<genexpr>)
+        1    0.000    0.000    0.038    0.038 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:768(_slice_take_blocks_ax0)
+        1    0.000    0.000    0.027    0.027 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:2191(_form_blocks)
+       12    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\init.py:12(_no_grad_uniform_)
+        1    0.000    0.000    0.001    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_methods.py:267(_std)
+       24    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\parameter.py:30(__new__)
+       12    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\init.py:356(_calculate_correct_fan)
+      202    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:142(classes)
+       84    0.000    0.000    0.000    0.000 {method '__exit__' of 'torch._C.DisableTorchFunctionSubclass' objects}
+      202    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:144(<lambda>)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:493(_init_module_attrs)
+       57    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:158(is_object_dtype)
+       10    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\activation.py:98(__init__)
+      107    0.000    0.000    0.000    0.000 {method 'add' of 'set' objects}
+        1    0.000    0.000    0.003    0.003 C:\Users\abhil\anaconda3\Lib\site-packages\zstandard\__init__.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.compile}
+       26    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:1618(remove_from)
+        1    0.000    0.000    0.528    0.528 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1688(read)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:437(cache_from_source)
+        8    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\util\version\__init__.py:343(<genexpr>)
+        7    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1421(_path_importer_cache)
+        1    0.000    0.000    0.009    0.009 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1362(__init__)
+        1    0.000    0.000    0.550    0.550 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:814(read_csv)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:820(_engine)
+      145    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:705(<lambda>)
+       50    0.000    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:2059(parameters)
+        1    0.000    0.000    0.032    0.032 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\construction.py:411(dict_to_mgr)
+        1    0.000    0.000    0.009    0.009 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1629(_make_engine)
+        1    0.000    0.000    0.000    0.000 {method 'read' of '_io.BufferedReader' objects}
+       49    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:168(_type_check)
+       50    0.000    0.000    0.001    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:2084(named_parameters)
+       12    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\init.py:122(uniform_)
+        4    0.000    0.000    0.037    0.009 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\array_algos\take.py:120(_take_nd_ndarray)
+        1    0.000    0.000    0.496    0.496 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:222(read)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\contextlib.py:104(__init__)
+       52    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:2113(<lambda>)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:1429(find_common_type)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1414(_get_options_with_defaults)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_methods.py:67(_count_reduce_items)
+    75/10    0.000    0.000    0.000    0.000 <frozen abc>:121(__subclasscheck__)
+        6    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\base.py:54(shape)
+        1    0.000    0.000    0.038    0.038 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:4557(_drop_axis)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:285(_get_filepath_or_buffer)
+        3    0.000    0.000    0.000    0.000 {pandas._libs.lib.infer_dtype}
+        1    0.000    0.000    0.006    0.006 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:648(get_handle)
+      2/1    0.000    0.000    0.005    0.005 <frozen importlib._bootstrap>:1165(_find_and_load)
+        1    0.000    0.000    0.001    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:169(__init__)
+        2    0.000    0.000    0.033    0.016 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\frame.py:641(__init__)
+        1    0.000    0.000    0.027    0.027 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:2119(create_block_manager_from_column_arrays)
+        2    0.000    0.000    0.000    0.000 {method 'get_indexer' of 'pandas._libs.index.IndexEngine' objects}
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of '_io._IOBase' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:2205(is_unique)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\fromnumeric.py:3345(mean)
+        4    0.000    0.000    0.060    0.015 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:2109(get_values)
+        2    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap>:1054(_find_spec)
+        2    0.000    0.000    0.037    0.019 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:926(take_nd)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:1219(dedup_names)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:658(Union)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:3716(get_indexer)
+       13    0.000    0.000    0.000    0.000 {built-in method _abc._abc_instancecheck}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:306(apply)
+        1    0.000    0.000    0.006    0.006 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:1172(_get_binary_io_classes)
+       42    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\fromnumeric.py:2183(_sum_dispatcher)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:6666(drop)
+       74    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
+       97    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1240(<lambda>)
+       49    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:2175(_grouping_func)
+        9    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_dtype.py:344(_name_get)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:108(__init__)
+       84    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\jit\__init__.py:89(annotate)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\array_algos\take.py:287(_get_take_nd_function_cached)
+       48    0.000    0.000    0.000    0.000 {method 'dim' of 'torch._C._TensorBase' objects}
+       42    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:249(_optimizer_step_code)
+        2    0.000    0.000    0.000    0.000 {pandas._libs.algos.take_1d_int64_int64}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\lib\function_base.py:5054(delete)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\missing.py:106(isna)
+       55    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\range.py:892(__len__)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:1007(get_code)
+        2    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap_external>:1464(_get_spec)
+      2/1    0.000    0.000    0.005    0.005 <frozen importlib._bootstrap>:1120(_find_and_load_unlocked)
+        1    0.000    0.000    0.006    0.006 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\compat\_optional.py:91(import_optional_dependency)
+        5    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:640(_simple_new)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:5314(equals)
+        1    0.000    0.000    0.038    0.038 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:683(reindex_indexer)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\_ops.py:239(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1881(_refine_defaults_read)
+      104    0.000    0.000    0.000    0.000 {method 'endswith' of 'str' objects}
+        1    0.000    0.000    0.003    0.003 {built-in method builtins.exec}
+        2    0.000    0.000    0.141    0.071 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\frame.py:11286(values)
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._get_operation_overload}
+        8    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:551(is_dtype_equal)
+        1    0.000    0.000    0.038    0.038 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:4518(drop)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1469(_clean_options)
+        2    0.000    0.000    0.001    0.000 {built-in method builtins.sum}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\urllib\parse.py:452(urlsplit)
+        6    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_ufunc_config.py:452(_no_nep50_warning)
+        9    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\inference.py:294(<genexpr>)
+       37    0.000    0.000    0.000    0.000 {function _ParameterMeta.__instancecheck__ at 0x000001C2A5E09260}
+        7    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1656(pandas_dtype)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_asarray.py:31(require)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1755(<listcomp>)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1655(_fill_cache)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:1573(construct_1d_object_array_from_listlike)
+        1    0.000    0.000    0.000    0.000 {method '_rebuild_blknos_and_blklocs' of 'pandas._libs.internals.BlockManager' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\_ops.py:447(__getattr__)
+      104    0.000    0.000    0.000    0.000 {method 'items' of 'collections.OrderedDict' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\common.py:229(asarray_tuplesafe)
+        4    0.000    0.000    0.037    0.009 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\array_algos\take.py:58(take_nd)
+        7    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:1297(__setattr__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:179(_get_module_lock)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:1353(__init__)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\util\version\__init__.py:515(_cmpkey)
+        1    0.000    0.000    0.000    0.000 {built-in method pandas._libs.missing.isnaobj}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {pandas._libs.lib.array_equivalent_object}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:629(_maybe_promote)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\range.py:108(__new__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\platform.py:1111(python_implementation)
+        6    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\base.py:494(find)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:4632(_reduce)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1819(<listcomp>)
+      2/1    0.000    0.000    0.004    0.004 <frozen importlib._bootstrap>:666(_load_unlocked)
+        1    0.000    0.000    0.001    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\adam.py:14(__init__)
+        2    0.000    0.000    0.006    0.003 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:1151(_is_binary_mode)
+        7    0.000    0.000    0.000    0.000 {built-in method builtins.next}
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:172(_path_isabs)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:230(make_block_same_class)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:778(spec_from_file_location)
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(putmask)
+        1    0.000    0.000    0.001    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\fromnumeric.py:3473(std)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:10967(_logical_func)
+        2    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_all_arraylike}
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\contextlib.py:287(helper)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\urllib\parse.py:374(urlparse)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\contextlib.py:141(__exit__)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:1127(get_data)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:313(_remove_dups_flatten)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\array_algos\take.py:325(_get_take_nd_function)
+       83    0.000    0.000    0.000    0.000 {method 'rstrip' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\warnings.py:181(_add_filter)
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(mean)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:123(maybe_convert_platform)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1599(_get_spec)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\loss.py:29(__init__)
+        2    0.000    0.000    0.000    0.000 {method 'search' of 're.Pattern' objects}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:117(close)
+       27    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:244(_verbose_message)
+        1    0.000    0.000    0.004    0.004 <frozen importlib._bootstrap_external>:934(exec_module)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:6342(copy)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\missing.py:189(_isna)
+        2    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap>:566(module_from_spec)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\base.py:208(interleaved_dtype)
+       13    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:140(_path_stat)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:201(_set_noconvert_columns)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:702(Optional)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:7202(_unpack_nested_dtype)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:621(_maybe_promote_cached)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:1190(is_potential_multi_index)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:855(_do_date_conversions)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1408(_path_hooks)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:5839(get_indexer_for)
+        1    0.000    0.000    0.001    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:521(_init_dict)
+       18    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\base.py:56(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\nanops.py:499(nanany)
+        1    0.000    0.000    0.001    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1409(close)
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.locals}
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\warnings.py:466(__enter__)
+        1    0.000    0.000    0.031    0.031 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\construction.py:97(arrays_to_mgr)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\inference.py:267(is_dict_like)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:332(<dictcomp>)
+        4    0.000    0.000    0.000    0.000 {built-in method _thread.allocate_lock}
+       35    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:567(_get_cached)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:262(profile_hook_step)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:534(infer_compression)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:100(acquire)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:4963(_get_engine_target)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_ufunc_config.py:33(seterr)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\missing.py:455(array_equivalent)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\nanops.py:264(_get_values)
+      5/2    0.000    0.000    0.003    0.001 <frozen importlib._bootstrap>:233(_call_with_frames_removed)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:275(is_datetime64_dtype)
+       17    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:895(__eq__)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\array_algos\take.py:564(_take_preprocess_indexer_and_fill_value)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:1388(np_find_common_type)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:169(__enter__)
+        2    0.000    0.000    0.000    0.000 <string>:1(<lambda>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:178(_validate_parse_dates_presence)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:3804(_get_indexer)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\util\_validators.py:224(validate_bool_kwarg)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:169(_expand_user)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:523(_get_axis)
+        2    0.000    0.000    0.000    0.000 {method 'transpose' of 'numpy.ndarray' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:67(_relax_case)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\optim\optimizer.py:291(_patch_step_function)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\construction.py:476(<listcomp>)
+        7    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1077(needs_i8_conversion)
+       30    0.000    0.000    0.000    0.000 {method 'join' of 'str' objects}
+       13    0.000    0.000    0.000    0.000 <frozen abc>:117(__instancecheck__)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:566(maybe_promote)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1559(__init__)
+        2    0.000    0.000    0.000    0.000 {pandas._libs.lib.dtypes_all_equal}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\module.py:480(register_buffer)
+        9    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_dtype.py:330(_name_includes_bit_suffix)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:6574(delete)
+        2    0.000    0.000    0.000    0.000 {method 'any' of 'numpy.ndarray' objects}
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:159(_type_convert)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:845(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\loss.py:20(__init__)
+        1    0.000    0.000    0.038    0.038 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\frame.py:5110(drop)
+        5    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:150(_path_is_mode_type)
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.core._multiarray_umath.normalize_axis_index}
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1127(is_numeric_dtype)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:212(<dictcomp>)
+        5    0.000    0.000    0.000    0.000 {method 'add_index_reference' of 'pandas._libs.internals.BlockValuesRefs' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method torch._C._get_schema}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:620(copy)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:6083(_should_compare)
+        7    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:1245(_is_dunder)
+      2/1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:479(__getitem__)
+        2    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(result_type)
+        8    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\base.py:286(is_dtype)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_asarray.py:112(<setcomp>)
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.any}
+        8    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1389(is_ea_or_datetimelike_dtype)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:4901(reindex)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\functools.py:35(update_wrapper)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\numerictypes.py:356(issubdtype)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:3849(_check_indexing_method)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\contextlib.py:132(__enter__)
+        2    0.000    0.000    0.000    0.000 {built-in method _imp.is_builtin}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:125(release)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:1468(<genexpr>)
+        1    0.000    0.000    0.000    0.000 <frozen zipimport>:64(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\common.py:261(index_labels_to_array)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1696(path_hook_for_FileFinder)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:132(_path_split)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:71(__init__)
+        1    0.000    0.000    0.005    0.005 <frozen importlib._bootstrap>:1192(_gcd_import)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:453(_validate_dtype)
+       10    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\warnings.py:440(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:5106(reindex)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:5401(identical)
+        3    0.000    0.000    0.000    0.000 <frozen _collections_abc>:78(_check_methods)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\_distutils_hack\__init__.py:89(find_spec)
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+        1    0.000    0.000    0.002    0.002 <frozen importlib._bootstrap_external>:1231(create_module)
+        1    0.000    0.000    0.001    0.001 <__array_function__ internals>:177(std)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\torch\nn\modules\loss.py:615(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1813(_consolidate_check)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:727(_compile_bytecode)
+        8    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\numerictypes.py:282(issubclass_)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\missing.py:553(_array_equivalent_object)
+       20    0.000    0.000    0.000    0.000 {method 'group' of 're.Match' objects}
+        3    0.000    0.000    0.000    0.000 {method 'set' of '_contextvars.ContextVar' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:422(is_interval_dtype)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:565(_ensure_array)
+       10    0.000    0.000    0.000    0.000 {built-in method __new__ of type object at 0x00007FFBBEE3A4B0}
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\warnings.py:165(simplefilter)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\range.py:166(_simple_new)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:1258(__init__)
+        2    0.000    0.000    0.002    0.001 <frozen importlib._bootstrap_external>:1496(find_spec)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\dtypes.py:1241(is_dtype)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:11010(any)
+        1    0.000    0.000    0.005    0.005 C:\Users\abhil\anaconda3\Lib\importlib\__init__.py:108(import_module)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_ufunc_config.py:132(geterr)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:392(cached)
+        6    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:1459(<genexpr>)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\missing.py:949(clean_reindex_fill_method)
+        2    0.000    0.000    0.000    0.000 {method 'max' of 'numpy.ndarray' objects}
+        7    0.000    0.000    0.000    0.000 {built-in method builtins.setattr}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:328(<listcomp>)
+        1    0.000    0.000    0.000    0.000 <frozen os>:674(__getitem__)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\missing.py:625(na_value_for_dtype)
+        6    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:460(is_categorical_dtype)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:642(_classify_pyc)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:299(_deduplicate)
+        3    0.000    0.000    0.000    0.000 {built-in method nt._path_splitroot}
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:5348(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:534(copy)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:205(mgr_locs)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1017(from_blocks)
+       12    0.000    0.000    0.000    0.000 {method 'rpartition' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:6101(_is_comparable_dtype)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\base.py:767(__iter__)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:229(stringify_path)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1030(__exit__)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:173(__exit__)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:84(_unpack_uint32)
+        1    0.000    0.000    0.001    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:194(close)
+        1    0.000    0.000    0.000    0.000 {pandas._libs.internals.get_blkno_placements}
+        3    0.000    0.000    0.000    0.000 {method 'remove' of 'list' objects}
+        6    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:134(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\missing.py:266(_isna_array)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_methods.py:55(_any)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_ufunc_config.py:430(__enter__)
+        6    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:809(_reset_identity)
+        1    0.000    0.000    0.001    0.001 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1738(__exit__)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:694(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:188(validate_header_arg)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:595(_set_noconvert_dtype_columns)
+        6    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:1475(<genexpr>)
+        1    0.000    0.000    0.000    0.000 {method 'stream_reader' of 'zstd.ZstdDecompressor' objects}
+        3    0.000    0.000    0.000    0.000 {method 'reset' of '_contextvars.ContextVar' objects}
+        3    0.000    0.000    0.000    0.000 <frozen ntpath>:319(expanduser)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\warnings.py:487(__exit__)
+        9    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_dtype.py:24(_kind_name)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:6013(_maybe_promote)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:2636(inferred_type)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1805(is_consolidated)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:213(<listcomp>)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:357(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:247(_collect_parameters)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:141(is_url)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:1304(__instancecheck__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\missing.py:307(_isna_string_dtype)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:450(_engine_type)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1860(from_blocks)
+       10    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:159(_path_isfile)
+       21    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:4937(_values)
+       20    0.000    0.000    0.000    0.000 <frozen _collections_abc>:409(__subclasshook__)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\inference.py:99(is_file_like)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:192(fill_value)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:1215(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:1365(_validate_parse_dates_arg)
+        2    0.000    0.000    0.000    0.000 {built-in method numpy.seterrobj}
+        2    0.000    0.000    0.000    0.000 {built-in method fromkeys}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:354(_make_index)
+        3    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 <frozen os>:748(encodekey)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1026(__enter__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:742(_ensure_dtype_type)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:271(_extract_multi_indexer_columns)
+        1    0.000    0.000    0.000    0.000 <frozen _collections_abc>:771(get)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:583(_dtype_to_subclass)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1207(_handle_fromlist)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\urllib\parse.py:119(_coerce_args)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:167(blknos)
+       16    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:748(find_spec)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:1211(_process_date_conversion)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:509(_get_axis_number)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:11311(any)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:228(is_single_block)
+       12    0.000    0.000    0.000    0.000 {built-in method _imp.acquire_lock}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:198(cb)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:920(find_spec)
+        3    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:405(parent)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:112(ensure_python_int)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:479(dtype)
+       12    0.000    0.000    0.000    0.000 {built-in method _imp.release_lock}
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:904(__hash__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\common.py:296(maybe_iterable_to_list)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\cast.py:1470(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:273(is_fsspec_url)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1239(exec_module)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:623(ndim)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1684(<setcomp>)
+        3    0.000    0.000    0.000    0.000 <frozen _collections_abc>:315(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:1579(__subclasscheck__)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:778(is_)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:6361(_maybe_cast_listlike_indexer)
+        1    0.000    0.000    0.000    0.000 <frozen os>:1081(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:309(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:599(_check_name_wrapper)
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(can_cast)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1458(_check_file_or_buffer)
+        1    0.000    0.000    0.000    0.000 {method '__exit__' of 'zstd.ZstdDecompressionReader' objects}
+        3    0.000    0.000    0.000    0.000 {method 'copy' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:165(__init__)
+        4    0.000    0.000    0.000    0.000 {built-in method pandas._libs.missing.checknull}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:2323(_preprocess_slice_or_indexer)
+        3    0.000    0.000    0.000    0.000 {built-in method numpy.asanyarray}
+        2    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+        2    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_object}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\functools.py:65(wraps)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\copy.py:66(copy)
+        1    0.000    0.000    0.000    0.000 <__array_function__ internals>:177(delete)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\generic.py:7878(isna)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\blocks.py:2465(extend_blocks)
+        2    0.000    0.000    0.000    0.000 {built-in method _imp.find_frozen}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:675(_validate_timestamp_pyc)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\enum.py:193(__get__)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:351(is_timedelta64_dtype)
+        4    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\construction.py:636(_sanitize_non_ordered)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\base.py:46(__len__)
+        1    0.000    0.000    0.000    0.000 <string>:2(__init__)
+        4    0.000    0.000    0.000    0.000 {built-in method numpy.geterrobj}
+        9    0.000    0.000    0.000    0.000 {built-in method _warnings._filters_mutated}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\common.py:186(all_none)
+        3    0.000    0.000    0.000    0.000 {method 'insert' of 'list' objects}
+        7    0.000    0.000    0.000    0.000 {method 'partition' of 'str' objects}
+        3    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1565(<genexpr>)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1146(path_stats)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_ufunc_config.py:435(__exit__)
+        6    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\util\version\__init__.py:465(_parse_letter_version)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:5540(isna)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:1099(_make_date_converter)
+        7    0.000    0.000    0.000    0.000 {built-in method nt.fspath}
+        4    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+        5    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_iterator}
+        4    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_bool}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:458(__repr__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\numeric.py:150(ones)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_methods.py:39(_amax)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\construction.py:197(mgr_to_mgr)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\compat\_optional.py:70(get_version)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1823(_consolidate_inplace)
+        4    0.000    0.000    0.000    0.000 {method 'rfind' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1097(__init__)
+        1    0.000    0.000    0.000    0.000 <frozen _collections_abc>:262(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\platform.py:1007(_sys_version)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:876(_check_data_length)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\missing.py:121(clean_fill_method)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\nanops.py:353(_na_ok_dtype)
+        5    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:931(dtype)
+        1    0.000    0.000    0.000    0.000 {method 'match' of 're.Pattern' objects}
+        3    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        7    0.000    0.000    0.000    0.000 {pandas._libs.algos.ensure_platform_int}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\missing.py:679(is_valid_na_for_dtype)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\construction.py:714(_try_cast)
+        1    0.000    0.000    0.000    0.000 {built-in method _codecs.lookup}
+        1    0.000    0.000    0.000    0.000 {method 'pop' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:48(_new_module)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:2660(_is_multi)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\typing.py:1358(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1806(_clean_na_values)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\util\version\__init__.py:144(__lt__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\nanops.py:220(_maybe_get_mask)
+        4    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        3    0.000    0.000    0.000    0.000 {built-in method from_bytes}
+        1    0.000    0.000    0.000    0.000 {built-in method sys.getfilesystemencoding}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:1101(_sanity_check)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1220(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\_ufunc_config.py:426(__init__)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:405(ensure_dtype_objs)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:1103(_maybe_memory_map)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:1582(name)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:5414(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:2109(_validate_skipfooter)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\fromnumeric.py:3340(_mean_dispatcher)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\util\_validators.py:445(check_dtype_backend)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:530(<genexpr>)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:6001(_index_as_unique)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\common.py:499(get_compression_method)
+        4    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:164(_path_isdir)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\util\version\__init__.py:529(<lambda>)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:982(__init__)
+        1    0.000    0.000    0.000    0.000 {built-in method _codecs.lookup_error}
+        1    0.000    0.000    0.000    0.000 <frozen os>:742(check_str)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\enum.py:1249(value)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:1168(<lambda>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:242(_has_complex_date_col)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:342(_maybe_make_multi_index_columns)
+        3    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:1387(is_index_col)
+        1    0.000    0.000    0.000    0.000 {method 'isdisjoint' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 {method 'lstrip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp.exec_dynamic}
+        1    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:413(has_location)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\fromnumeric.py:3468(_std_dispatcher)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\dtypes\common.py:498(is_string_or_object_np_dtype)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\frame.py:632(_constructor)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\base.py:683(_constructor)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:183(blklocs)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:2011(_extract_dialect)
+        1    0.000    0.000    0.000    0.000 {method 'find' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'isalpha' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+        1    0.000    0.000    0.000    0.000 <frozen _collections_abc>:381(__subclasshook__)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:931(create_module)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\multiarray.py:1130(putmask)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:233(items)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:783(__len__)
+        1    0.000    0.000    0.000    0.000 <frozen codecs>:260(__init__)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\multiarray.py:668(result_type)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\util\version\__init__.py:503(_parse_local_version)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\compat\numpy\function.py:60(__call__)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\common.py:190(<genexpr>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:333(<dictcomp>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\internals\managers.py:1838(ndim)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\series.py:574(_constructor)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:486(validate_integer)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:516(_validate_names)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:966(_validate_usecols_arg)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:222(<setcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'reverse' of 'list' objects}
+        1    0.000    0.000    0.000    0.000 {method 'discard' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 {pandas._libs.lib.is_float}
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\_distutils_hack\__init__.py:96(<lambda>)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\copy.py:107(_copy_immutable)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\urllib\parse.py:421(_checknetloc)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\core\multiarray.py:502(can_cast)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\urllib\parse.py:108(_noop)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\numpy\lib\function_base.py:5050(_delete_dispatcher)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\nanops.py:198(_get_fill_value)
+        2    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\base.py:326(ndim)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\core\indexes\range.py:181(_validate_dtype)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\base_parser.py:234(<listcomp>)
+        1    0.000    0.000    0.000    0.000 {method 'strip' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'isascii' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1122(get_filename)
+        1    0.000    0.000    0.000    0.000 C:\Users\abhil\anaconda3\Lib\site-packages\pandas\io\parsers\readers.py:1735(__enter__)
+
+

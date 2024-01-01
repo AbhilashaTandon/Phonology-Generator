@@ -1,234 +1,219 @@
+import io
+import pstats
+import cProfile
 import torch
 import numpy as np
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+from language import Phoneme, Language
+from autoencoder import AE
+from generation import gen_avg_inventory, gen_inventory
 
-phoible = pd.read_csv(
-    "C:\\Users\\abhil\\Documents\\Programming\\Machine Learning\\Phonology Generator\\phoible.csv", low_memory=False)
+pwd = "C:\\Users\\abhil\\Documents\\Programming\\Machine Learning\\Phonology Generator\\"
+
+saved_models = pwd + "\\saved_models\\model.pt"
+
+
+def load_data():
+    phoible = pd.read_csv(pwd + "phoible.csv", low_memory=False)
 # Data cleaning
 
-phoible = phoible.drop(
-    columns=['SpecificDialect', 'GlyphID', 'Glottocode', 'Source'])  # unneeded cols
+    phoible = phoible.drop(
+        columns=['SpecificDialect', 'GlyphID', 'Glottocode', 'Source'])  # unneeded cols
 
-moa_ids = {'stop': 0, 'fricative': 1, 'nasal': 2, 'approximant': 3,
-           'vocalic': 4, 'click': 5, 'blend': 6, 'syllabic_cons': 7, 'vowel': 8, 'tone': 9}
+    moa_ids = {'stop': 0, 'affricate': 1, 'fricative': 2, 'nasal': 3, 'approximant': 4,
+               'vocalic': 5, 'click': 6, 'blend': 7, 'syllabic_cons': 8, 'vowel': 9, 'tone': 10}
 
-num_moas = len(moa_ids)
+    num_moas = len(moa_ids)
 
+    phonemes = {}  # add to dict first, then make list sorted by occurences
 
-class Phoneme():
-    def __init__(self, row):
-        self.ipa = row['Phoneme']  # ipa symbol, is a string
-        self.occurences = 1  # we start with 1
-        self.set_moa(row)
-
-    def set_moa(self, row):  # uses features given in PHOIBLE to assign a class
-        segment_moa = row['SegmentClass']
-        if (segment_moa == 'vowel'):
-            self.moa = 'vowel'
-        elif (segment_moa == 'tone'):
-            self.moa = 'tone'
-        elif (row['click'] == '+'):
-            self.moa = 'click'
-        elif (row['syllabic'] == '+'):  # if syllabic but not vowel
-            self.moa = 'syllabic_cons'
-        elif (row['consonantal'] == '-'):  # if not consonantal but not vowel
-            self.moa = 'vocalic'
-        elif (row['continuant'] == '+' and row['sonorant'] == '-'):
-            self.moa = 'fricative'
-        elif (row['sonorant'] == '+' and row['nasal'] == '+'):
-            self.moa = 'nasal'
-        elif (row['continuant'] == '-'):  # not continuant but consonant
-            self.moa = 'stop'
-        elif (row['approximant'] == '+'):
-            self.moa = 'approximant'
+    for _, row in phoible.iterrows():
+        ipa = row['Phoneme']
+        if (ipa not in phonemes):
+            new_phoneme = Phoneme(row)
+            phonemes[ipa] = new_phoneme
         else:
-            self.moa = 'blend'
+            phonemes[ipa].occurences += 1
+
+    phoneme_list = sorted(
+        phonemes.values(), key=lambda x: x.occurences, reverse=True)
+
+    # get rid of phonemes that are very infrequent
+    phoneme_list = [x for x in phoneme_list if x.occurences > 5]
+
+    # for x in phoneme_list:
+    #     print("%s\t%.2f\t%s" % (x.ipa, x.poa, x.moa))
+
+    print("%d Phonemes" % len(phoneme_list))
+
+    phoneme_to_id = {phoneme.ipa: id for id,
+                     phoneme in enumerate(phoneme_list)}
+
+    languages = {}
+
+    for _, row in phoible.iterrows():
+        lang_name = row['LanguageName']
+        if (lang_name not in languages):
+
+            new_language = Language(lang_name)
+            languages[lang_name] = new_language
+
+        if (row['Phoneme'] in phoneme_to_id):
+            current_phoneme = Phoneme(row)
+
+            languages[lang_name].add_phoneme([current_phoneme])
+
+    languages = list(languages.values())  # make it so we index
+
+    return languages, phoneme_list
 
 
-phonemes = {}  # add to dict first, then make list sorted by occurences
+def train(model, train_data, phoneme_list, phoneme_to_id, loss_function, optimizer, scheduler, epochs, batch_size, verbose=True):
+    for epoch in range(epochs):
+        avg_loss = 0
+        np.random.shuffle(train_data)
+        num_batches = len(train_data) // batch_size
+        for i in range(num_batches):
+            min_index = i * batch_size
+            max_index = min((i+1) * batch_size, len(train_data))
+            batch = np.array([train_data[x].get_vector(phoneme_list, phoneme_to_id)
+                             for x in range(min_index, max_index)])
 
-for _, row in phoible.iterrows():
-    ipa = row['Phoneme']
-    if (ipa not in phonemes):
-        new_phoneme = Phoneme(row)
-        phonemes[ipa] = new_phoneme
-    else:
-        phonemes[ipa].occurences += 1
+            batch = torch.Tensor(
+                batch).reshape(-1, len(phoneme_list))
 
-phoneme_list = sorted(
-    phonemes.values(), key=lambda x: x.occurences, reverse=True)
+            reconstructed = model(batch)
 
-# get rid of phonemes that occur in 10 or less langs
-phoneme_list = [x for x in phoneme_list if x.occurences > 10]
+            mse_loss = loss_function(reconstructed, batch)
 
-print(len(phoneme_list))
+            loss = mse_loss
 
-phoneme_to_id = {phoneme.ipa: id for id, phoneme in enumerate(phoneme_list)}
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
 
+            # updating moving average
+            mse_loss_val = mse_loss.detach().item()
+            avg_loss += mse_loss_val
 
-class Language():
-    def __init__(self, name, lang_id):
-        self.id = lang_id
-        self.name = name
-        self.phoneme_arr = [0 for x in phoneme_list]
-        self.phonemes = []
-        # 6 classes, stops frics sons vocalic vowels tones
-        self.phoneme_moas = [0 for x in moa_ids]
+        avg_loss /= num_batches
+        if (verbose):
+            print("Epoch #%d\t%.6f" % (epoch, avg_loss))
+        scheduler.step(avg_loss)
 
-    def add_phoneme(self, phoneme_id):  # adds single phoneme to given language
-        phoneme = phoneme_list[phoneme_id]
-        self.phoneme_arr[phoneme_id] = 1
-        self.phonemes.append(phoneme.ipa)
-        self.phoneme_moas[moa_ids[phoneme.moa]] += 1
-
-    def get_vector(self):
-        return self.phoneme_arr
+    return model, avg_loss
 
 
-languages = {}
+def test(model, test_data, phoneme_list, phoneme_to_id, loss_function):
+    with torch.no_grad():
+        avg_loss = 0
+        for idx, lang in enumerate(test_data):
+            input = lang.get_vector(phoneme_list, phoneme_to_id)
+            input = torch.Tensor(input.reshape(len(phoneme_list)))
 
-for _, row in phoible.iterrows():
-    lang_id = row['InventoryID']
-    if (lang_id not in languages):
+            reconstructed = model(input)
 
-        new_language = Language(row['LanguageName'], lang_id)
-        languages[lang_id] = new_language
+            mse_loss = loss_function(reconstructed, input)
 
-    if (row['Phoneme'] in phoneme_to_id):
-        current_phoneme = phoneme_to_id[row['Phoneme']]
-
-        languages[lang_id].add_phoneme(current_phoneme)
-
-languages = list(languages.values())  # make it so we index
+            avg_loss += mse_loss.detach().item()
+        return avg_loss / len(test_data)
 
 
-class AE(torch.nn.Module):
-    # features and compressed features
-    def __init__(self, num_features, num_comp_phon_features):
-        super().__init__()
+def post_training(model, languages, phoneme_list, phoneme_to_id, latent_features):
+    # get average encoded vector
+    with torch.no_grad():
+        enc_vector = []
+        for i in range(len(languages)):
+            inventory_vec = torch.Tensor(
+                languages[i].get_vector(phoneme_list, phoneme_to_id))
+            encoded = model.encode(inventory_vec).detach().numpy()
+            enc_vector.append(encoded)
 
-        self.comp_vec = np.zeros(
-            (1, num_comp_phon_features))  # compressed vector
+        enc_vector = np.array(enc_vector)
 
-        self.encoder = torch.nn.Sequential(
-            torch.nn.Linear(num_features, 500),
-            torch.nn.ReLU(),
-            torch.nn.Linear(500, 150),
-            torch.nn.ReLU(),
-            torch.nn.Linear(150, 50),
-            torch.nn.ReLU(),
-            torch.nn.Linear(50, num_comp_phon_features)
-        )
+        mean = np.mean(enc_vector, axis=0)
+        stdev = np.std(enc_vector, axis=0)
 
-        self.decoder = torch.nn.Sequential(
-            torch.nn.Linear(num_comp_phon_features, 50),
-            torch.nn.ReLU(),
-            torch.nn.Linear(50, 150),
-            torch.nn.ReLU(),
-            torch.nn.Linear(150, 500),
-            torch.nn.ReLU(),
-            torch.nn.Linear(500, num_features),
-            torch.nn.Sigmoid()
-        )
+        for x in range(10):
+            inventory = gen_inventory(
+                model, mean, stdev, phoneme_list, latent_features)
+            print(inventory)
 
-    def forward(self, x):
-        encoded = self.encoder(x)
-        self.comp_vec = encoded
-        decoded = self.decoder(encoded)
-
-        return decoded
-
-    def decode(self, vec):
-        decoded = self.decoder(vec)
-        return decoded
+        print("Average Inventory")
+        print(gen_avg_inventory(model, mean, phoneme_list, latent_features))
 
 
-num_comp_phon_features = 20
+def gen_layers(input_features, latent_features):
+    layers = [input_features]
 
-model = AE(len(phoneme_list),
-           num_comp_phon_features)  # 10 different classes
+    hidden_features = input_features
 
-# Validation using MSE Loss function
-loss_function = torch.nn.MSELoss()
+    while (hidden_features > 2 * latent_features):
+        hidden_features = np.random.randint(latent_features, hidden_features)
+        layers.append(hidden_features)
 
-# Using an Adam Optimizer with lr = 0.1
-optimizer = torch.optim.Adam(model.parameters(),
-                             lr=7e-4,
-                             weight_decay=1e-8)
+    layers.append(latent_features)
 
-
-def vec_to_inventory(phon_vec, threshold):
-    inventory = {}
-    for moa_name in moa_ids:
-        inventory[moa_name] = []
-    for idx, val in enumerate(phon_vec):
-        if (val > threshold):
-            phoneme = phoneme_list[idx]
-            inventory[phoneme.moa].append(phoneme.ipa)
-    return inventory
+    return layers
 
 
-def gen_inventory(model):
-    vec = torch.Tensor(np.random.normal(
-        0, 2, size=(1, num_comp_phon_features)))
-    decoded = model.decode(vec)
-    threshold = np.random.rand() * .25 + .25
-    return vec_to_inventory(decoded.detach().numpy().reshape(-1), threshold)
+def main():
+    languages, phoneme_list = load_data()
+    phoneme_to_id = {phoneme.ipa: id for id,
+                     phoneme in enumerate(phoneme_list)}
+
+    from sklearn.model_selection import train_test_split
+
+    train_data, test_data = train_test_split(
+        languages, test_size=.2, random_state=42)
+    train_data, dev_data = train_test_split(
+        train_data, test_size=.2, random_state=42)
+
+    latent_features = 20  # len of compressed vector
+
+    layer_sizes = [719, 40]
+
+    model = AE(
+        latent_features, layer_sizes)  # 20 different parameters
+    LR = 1e-3
+
+    optimizer = torch.optim.Adam(model.parameters(),
+                                 lr=LR)
+
+    num_params = sum(p.numel()
+                     for p in model.parameters() if p.requires_grad)
+
+    print("Number of trainable parameters: %d" % num_params)
+    # number of trainable parameters
+
+    # checkpoint = torch.load(saved_models)
+    # model.load_state_dict(checkpoint['model_state_dict'])
+    # optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+        optimizer, patience=5, factor=.3, mode='min', verbose=True)
+
+    # scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
+
+    # Validation using Loss function
+    loss_function = torch.nn.MSELoss()
+
+    # Using an Adam Optimizer
+
+    model, train_loss = train(model, train_data, phoneme_list, phoneme_to_id, loss_function,
+                              optimizer, scheduler, epochs=10, batch_size=64, verbose=False)
+
+    test_loss = test(model, dev_data,
+                     phoneme_list, phoneme_to_id, loss_function)
+    print("%d\t%.4f" % (num_params, test_loss), layer_sizes)
+
+    # torch.save({'model_state_dict': model.state_dict(),
+    #             'optimizer_state_dict': optimizer.state_dict(), 'scheduler_state_dict': scheduler.state_dict()}, saved_models)
+    # print("MODEL SAVED")
+
+    # post_training(model, languages, phoneme_list,
+    #               phoneme_to_id, latent_features)
 
 
-epochs = 10
-batch_size = 4
-outputs = []
-losses = []
-
-for epoch in range(epochs):
-    losses = []
-    avg_loss = 0
-    np.random.shuffle(languages)
-    for i in range(len(languages) // batch_size):
-        min_index = i * batch_size
-        max_index = min((i+1) * batch_size, len(languages))
-        batch = np.array([languages[x].get_vector()
-                         for x in range(min_index, max_index)])
-
-        batch = torch.Tensor(
-            batch).reshape(-1, len(phoneme_list))
-
-        # Output of Autoencoder
-        reconstructed = model(batch)
-
-        # Calculating the loss function
-        loss = loss_function(reconstructed, batch)
-
-        # The gradients are set to zero,
-        # the gradient is computed and stored.
-        # .step() performs parameter update
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-
-        # Storing the losses in a list for plotting
-        loss_val = loss.detach().item()
-        losses.append(loss_val)
-        if (avg_loss == 0):
-            avg_loss = loss_val
-        else:
-            avg_loss = .99 * avg_loss + .01 * loss_val
-
-        if (i % 100 == 0):
-            print(i * batch_size, avg_loss)
-
-plt.plot([i for i, _ in enumerate(losses)], losses)
-plt.xlabel("Iteration")
-plt.ylabel("Loss")
-plt.show()
-
-for x in range(10):
-    inventory = gen_inventory(model)
-    for x in inventory.values():
-        if (len(x) > 0):
-            print(' '.join(x))
-    print()
-    print()
+if __name__ == "__main__":
+    main()
