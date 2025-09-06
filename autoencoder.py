@@ -7,11 +7,9 @@ class AE(torch.nn.Module):
     def __init__(self, latent_features, layers):
         super().__init__()
 
-        self.encoder = torch.nn.Sequential(
-        )
+        self.encoder = torch.nn.Sequential()
 
-        self.decoder = torch.nn.Sequential(
-        )
+        self.decoder = torch.nn.Sequential()
 
         for x, y in zip(layers[:-1], layers[1:]):
             self.encoder.append(torch.nn.Linear(x, y))
@@ -28,14 +26,10 @@ class AE(torch.nn.Module):
 
     def forward(self, x):
         encoded = self.encoder(x)
-        decoded = self.decoder(encoded)
-
-        return decoded
+        return self.decoder(encoded)
 
     def encode(self, x):
-        encoded = self.encoder(x)
-        return encoded
+        return self.encoder(x)
 
     def decode(self, vec):
-        decoded = self.decoder(vec)
-        return decoded
+        return self.decoder(vec)
