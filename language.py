@@ -120,6 +120,22 @@ class Language:
             if val > threshold:
                 self.add_phoneme([phoneme])
 
+    def from_vector_sized(self, vec, phoneme_list, num_phonemes):
+        cons_weights = sorted(vec, reverse=True)
+
+        if num_phonemes >= len(cons_weights):
+            threshold = 0
+        else:
+            threshold = cons_weights[num_phonemes]
+
+        self.phonemes = []  # clears inventory
+        for val, phoneme in zip(vec, phoneme_list):
+            if val > threshold:
+                self.add_phoneme([phoneme])
+
+    def num_phonemes(self):
+        return len(set([phoneme.ipa for phoneme in set(self.phonemes)]))
+
     def __str__(self):
         inv = self.get_inventory()
         out_str = ""

@@ -46,11 +46,37 @@ def mix_languages(
         languages[lang_name_2].get_vector(phoneme_list, phoneme_to_id)
     )
 
+    size = (
+        languages[lang_name_1].num_phonemes() + languages[lang_name_2].num_phonemes()
+    ) // 2
+
     encoded = (model.encode(lang_vec_1) + model.encode(lang_vec_2)) / 2
 
     decoded = model.decode(encoded)
 
-    threshold = np.random.rand() * 0.25
     inventory = Language("inventory")
-    inventory.from_vector(decoded.detach().numpy().reshape(-1), phoneme_list, threshold)
+    inventory.from_vector_sized(
+        decoded.detach().numpy().reshape(-1), phoneme_list, size
+    )
+    return inventory
+
+
+def negative_lang(
+    model, lang_name, languages, phoneme_list, phoneme_to_id, mean, num_phonemes
+):
+    if lang_name not in languages:
+        return None
+
+    lang_vec = torch.Tensor(
+        languages[lang_name].get_vector(phoneme_list, phoneme_to_id)
+    )
+
+    encoded = model.encode(lang_vec)
+
+    decoded = model.decode(2 * torch.Tensor(mean) - encoded)
+
+    inventory = Language("inventory")
+    inventory.from_vector_sized(
+        decoded.detach().numpy().reshape(-1), phoneme_list, num_phonemes
+    )
     return inventory

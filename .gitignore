@@ -1,3 +1,5 @@
 __pycache__/
+__pycache__
 __pycache__/generation.cpython-312.pyc
 __pycache__/language.cpython-312.pyc
+__pycache__/autoencoder.cpython-312.pyc
