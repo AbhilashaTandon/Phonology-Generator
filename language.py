@@ -1,6 +1,12 @@
 import numpy as np
 
 
+def remove_dupl(seq):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in seq if not (x in seen or seen_add(x))]
+
+
 class Phoneme:
     def __init__(self, row):
         self.ipa = row["Phoneme"]  # ipa symbol, is a string
@@ -118,7 +124,7 @@ class Language:
         inv = self.get_inventory()
         out_str = ""
         for moa in inv:
-            for phoneme in inv[moa]:
-                out_str += str(phoneme) + " "
+            for phoneme in remove_dupl(map(str, inv[moa])):
+                out_str += phoneme + " "
             out_str += "\n"
         return out_str

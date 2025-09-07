@@ -26,10 +26,14 @@ class AE(torch.nn.Module):
 
     def forward(self, x):
         encoded = self.encoder(x)
-        return self.decoder(encoded)
+        decoded = self.decoder(encoded)
+
+        return decoded
 
     def encode(self, x):
-        return self.encoder(x)
+        encoded = self.encoder(x)
+        return encoded
 
     def decode(self, vec):
-        return self.decoder(vec)
+        decoded = self.decoder(vec)
+        return decoded

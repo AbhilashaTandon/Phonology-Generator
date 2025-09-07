@@ -6,8 +6,19 @@ import numpy as np
 import pandas as pd
 from language import Phoneme, Language
 from autoencoder import AE
-from generation import gen_avg_inventory, gen_inventory
+from generation import gen_avg_inventory, gen_rand_inventory
+from sklearn.model_selection import GridSearchCV
 
+# LATENT_FEATURES = 10  # len of compressed vector
+# LAYER_SIZES = [719, 40]
+# BATCH_SIZE = 64
+# LR = 1e-3
+
+LATENT_FEATURES = 10  # len of compressed vector
+LAYER_SIZES = [719, 40]
+BATCH_SIZE = 64
+LR = 1e-3
+WEIGHT_DECAY = 1e-5
 
 saved_models = "saved_models/model.pt"
 
@@ -60,14 +71,15 @@ def load_data():
 
             languages[lang_name].add_phoneme([current_phoneme])
 
-    languages = list(languages.values())  # make it so we index
+    language_values = list(languages.values())  # make it so we index
 
-    return languages, phoneme_list
+    return language_values, phoneme_list, languages
 
 
 def train(
     model,
     train_data,
+    test_data,
     phoneme_list,
     phoneme_to_id,
     loss_function,
@@ -79,40 +91,79 @@ def train(
 ):
     for epoch in range(epochs):
         avg_loss = 0
+        avg_test_loss = 0
         np.random.shuffle(train_data)
         num_batches = len(train_data) // batch_size
+        test_batch_size = len(test_data) // num_batches
         for i in range(num_batches):
-            min_index = i * batch_size
-            max_index = min((i + 1) * batch_size, len(train_data))
-            batch = np.array(
-                [
-                    train_data[x].get_vector(phoneme_list, phoneme_to_id)
-                    for x in range(min_index, max_index)
-                ]
+            avg_loss += train_batch(
+                model,
+                train_data,
+                phoneme_list,
+                phoneme_to_id,
+                loss_function,
+                optimizer,
+                batch_size,
+                i,
             )
 
-            batch = torch.Tensor(batch).reshape(-1, len(phoneme_list))
-
-            reconstructed = model(batch)
-
-            mse_loss = loss_function(reconstructed, batch)
-
-            loss = mse_loss
-
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-
-            # updating moving average
-            mse_loss_val = mse_loss.detach().item()
-            avg_loss += mse_loss_val
+            with torch.no_grad():
+                avg_test_loss += train_batch(
+                    model,
+                    test_data,
+                    phoneme_list,
+                    phoneme_to_id,
+                    loss_function,
+                    optimizer,
+                    test_batch_size,
+                    i,
+                    train=False,
+                )
 
         avg_loss /= num_batches
+        avg_test_loss /= num_batches
         if verbose:
-            print("Epoch #%d\t%.6f" % (epoch, avg_loss))
+            print("Epoch #%d\t%.6f\t%.6f" % (epoch, avg_loss, avg_test_loss))
+
         scheduler.step(avg_loss)
 
     return model, avg_loss
+
+
+def train_batch(
+    model,
+    data,
+    phoneme_list,
+    phoneme_to_id,
+    loss_function,
+    optimizer,
+    batch_size,
+    i,
+    train=True,
+):
+    min_index = i * batch_size
+    max_index = min((i + 1) * batch_size, len(data))
+    batch = np.array(
+        [
+            data[x].get_vector(phoneme_list, phoneme_to_id)
+            for x in range(min_index, max_index)
+        ]
+    )
+
+    batch = torch.Tensor(batch).reshape(-1, len(phoneme_list))
+
+    reconstructed = model(batch)
+
+    mse_loss = loss_function(reconstructed, batch)
+
+    loss = mse_loss
+
+    if train:
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+
+    return mse_loss.detach().item()
 
 
 def test(model, test_data, phoneme_list, phoneme_to_id, loss_function):
@@ -147,7 +198,9 @@ def post_training(model, languages, phoneme_list, phoneme_to_id, latent_features
         stdev = np.std(enc_vector, axis=0)
 
         for x in range(10):
-            inventory = gen_inventory(model, mean, stdev, phoneme_list, latent_features)
+            inventory = gen_rand_inventory(
+                model, mean, stdev, phoneme_list, latent_features
+            )
             print(inventory)
 
         print("Average Inventory")
@@ -168,72 +221,85 @@ def gen_layers(input_features, latent_features):
     return layers
 
 
-def main():
-    languages, phoneme_list = load_data()
+def main(latent_features, weight_decay, batch_size, learning_rate):
+    languages, phoneme_list, _ = load_data()
     phoneme_to_id = {phoneme.ipa: id for id, phoneme in enumerate(phoneme_list)}
 
     from sklearn.model_selection import train_test_split
 
-    train_data, test_data = train_test_split(languages, test_size=0.2, random_state=42)
+    train_data, _ = train_test_split(languages, test_size=0.2, random_state=42)
     train_data, dev_data = train_test_split(train_data, test_size=0.2, random_state=42)
 
-    latent_features = 20  # len of compressed vector
+    model = AE(latent_features, LAYER_SIZES)  # 20 different parameters
 
-    layer_sizes = [719, 200, 40]
-
-    model = AE(latent_features, layer_sizes)  # 20 different parameters
-    LR = 1e-3
-
-    optimizer = torch.optim.Adam(model.parameters(), lr=LR)
+    optimizer = torch.optim.Adam(
+        model.parameters(), lr=learning_rate, weight_decay=weight_decay
+    )
 
     num_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
 
     print("Number of trainable parameters: %d" % num_params)
     # number of trainable parameters
 
-    checkpoint = torch.load(saved_models)
-    model.load_state_dict(checkpoint["model_state_dict"])
-    optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+    # checkpoint = torch.load(saved_models)
+    # model.load_state_dict(checkpoint["model_state_dict"])
+    # optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
 
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
         optimizer, patience=5, factor=0.3, mode="min", verbose=True
     )
 
-    scheduler.load_state_dict(checkpoint["scheduler_state_dict"])
+    # scheduler.load_state_dict(checkpoint["scheduler_state_dict"])
 
     # Validation using Loss function
     loss_function = torch.nn.MSELoss()
 
     # Using an Adam Optimizer
 
-    model, train_loss = train(
+    model, _ = train(
         model,
         train_data,
+        dev_data,
         phoneme_list,
         phoneme_to_id,
         loss_function,
         optimizer,
         scheduler,
-        epochs=200,
-        batch_size=64,
-        verbose=True,
+        epochs=100,
+        batch_size=batch_size,
+        verbose=False,
     )
 
     test_loss = test(model, dev_data, phoneme_list, phoneme_to_id, loss_function)
-    print("%d\t%.4f" % (num_params, test_loss), layer_sizes)
+    # print(
+    #     LAYER_SIZES,
+    #     "%d\t%d\t%d\t%.4f" % (LATENT_FEATURES, BATCH_SIZE, num_params, test_loss),
+    # )
 
-    torch.save(
-        {
-            "model_state_dict": model.state_dict(),
-            "optimizer_state_dict": optimizer.state_dict(),
-            "scheduler_state_dict": scheduler.state_dict(),
-        },
-        saved_models,
-    )
-    print("MODEL SAVED")
+    return test_loss
 
-    post_training(model, languages, phoneme_list, phoneme_to_id, latent_features)
+    # torch.save(
+    #     {
+    #         "model_state_dict": model.state_dict(),
+    #         "optimizer_state_dict": optimizer.state_dict(),
+    #         "scheduler_state_dict": scheduler.state_dict(),
+    #     },
+    #     saved_models,
+    # )
+    # print("MODEL SAVED")
+
+    # post_training(model, languages, phoneme_list, phoneme_to_id, latent_features)
 
 
 if __name__ == "__main__":
-    main()
+    parameters = {
+        "latent_features": (5, 10, 20, 40),
+        "weight_decay": (1e-6, 1e-5, 1e-4, 1e-3),
+        "batch_size": (1, 4, 16, 64, 256),
+        "learning_rate": (1e-4, 3e-4, 1e-3, 3e-3, 1e-2),
+    }
+
+    main(LATENT_FEATURES, WEIGHT_DECAY, BATCH_SIZE, LR)
+
+
+# consider trying lasso regression (L1 normalization)
